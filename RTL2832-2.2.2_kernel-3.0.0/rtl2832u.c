@@ -785,7 +785,6 @@ static struct usb_device_id rtl2832u_usb_table [] = {
 
 	{ USB_DEVICE(USB_VID_TERRATEC, USB_PID_TERRATEC_00A9)},	// 29
 	{ USB_DEVICE(USB_VID_TERRATEC, USB_PID_TERRATEC_00B3)},	// 30
-	{ USB_DEVICE(USB_VID_TERRATEC, USB_PID_TERRATEC_00D3)},	// cinergy tstick rc rev.3
 
 	{ USB_DEVICE(USB_VID_AZUREWAVE_2, USB_PID_AZUREWAVE_3234) },	// 31
 	{ USB_DEVICE(USB_VID_AZUREWAVE_2, USB_PID_AZUREWAVE_3274) },	// 32
@@ -823,6 +822,7 @@ static struct usb_device_id rtl2832u_usb_table [] = {
 	{ USB_DEVICE(USB_VID_LEADTEK, USB_PID_LEADTEK_WARM_1)},		// 60
 	{ USB_DEVICE(USB_VID_LEADTEK, USB_PID_LEADTEK_WARM_2)},		// 61
 
+<<<<<<< HEAD
 	{ USB_DEVICE(USB_VID_YUAN, USB_PID_YUAN_WARM)},			// 62
 	{ USB_DEVICE(USB_VID_YUAN, USB_PID_YUAN_WARM80)},		// 63
 	{ USB_DEVICE(USB_VID_YUAN, USB_PID_YUAN_WARM84)},	 	// 64
@@ -835,6 +835,20 @@ static struct usb_device_id rtl2832u_usb_table [] = {
 	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9580)},	// 70
 	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9550)},	// 71
 	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9540)},	// 72
+=======
+	{ USB_DEVICE(USB_VID_YUAN, USB_PID_YUAN_WARM)},			//62
+        { USB_DEVICE(USB_VID_YUAN, USB_PID_YUAN_WARM80)},		//63
+	{ USB_DEVICE(USB_VID_YUAN, USB_PID_YUAN_WARM84)},	 	//64
+
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_0620)},	// 65			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_0630)},	// 66			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_0640)},	// 67			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_0650)},	// 68			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_0680)},	// 69			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9580)},	// 70			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9550)},	// 71			
+	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9540)},	// 72			
+>>>>>>> 08696eea2bb680b4be13b2a76e695081d9930717
 	{ USB_DEVICE(USB_VID_COMPRO, USB_PID_COMPRO_WARM_9530)},	// 73  71																						//------rtl2832u_6th_properties(6)
 	{ USB_DEVICE(USB_VID_COMPRO,  USB_PID_COMPRO_WARM_9520)},	// 74
 	
@@ -844,6 +858,10 @@ static struct usb_device_id rtl2832u_usb_table [] = {
 
 	{ USB_DEVICE(USB_VID_KWORLD_1ST, USB_PID_KWORLD_C880) },	// 77
 													
+	{ USB_DEVICE(USB_VID_TERRATEC, USB_PID_TERRATEC_00D3)},	// 76 cinergy tstick rc rev.3
+	{ USB_DEVICE(USB_VID_LEADTEK, USB_PID_LEADTEK_WARM_3)},	// 77 winfast dtv dongle mini
+	{ USB_DEVICE(USB_VID_KWORLD_1ST, USB_PID_KWORLD_C880)}, // 78 afatech in Asus ET2311i
+
 	{ 0 },
 };
 
@@ -1222,7 +1240,7 @@ static struct dvb_usb_device_properties rtl2832u_4th_properties = {
 		.rc_interval  = RT_RC_POLLING_INTERVAL_TIME_MS,		
 	},
 	
-	.num_device_descs = 9,
+	.num_device_descs = 10,
 	.devices = {
 		{ .name = "DK DONGLE",
 		  .cold_ids = { NULL, NULL },
@@ -1269,6 +1287,11 @@ static struct dvb_usb_device_properties rtl2832u_4th_properties = {
 		  .cold_ids = { NULL, NULL },
 		  .warm_ids = { &rtl2832u_usb_table[35], NULL },
 		},				
+		{
+		  .name = "Terratec Cinergy T Stick RC rev. 3",
+		  .cold_ids = { NULL, NULL },
+		  .warm_ids = { &rtl2832u_usb_table[76], NULL },
+		},
 		
 		
 	}
@@ -1333,7 +1356,7 @@ static struct dvb_usb_device_properties rtl2832u_5th_properties = {
 		.rc_interval  = RT_RC_POLLING_INTERVAL_TIME_MS,		
 	},
 	
-	.num_device_descs = 9,
+	.num_device_descs = 10,
 	.devices = {
 		{ .name = "RTL2832U DVB-T USB DEVICE",
 		  .cold_ids = { NULL, NULL },
@@ -1381,9 +1404,16 @@ static struct dvb_usb_device_properties rtl2832u_5th_properties = {
 		  .warm_ids = { &rtl2832u_usb_table[44], NULL },
 		},				
 		
+<<<<<<< HEAD
 		{ .name = "USB DVB-T DEVICE",
 		  .cold_ids = { NULL, NULL },
 		  .warm_ids = { &rtl2832u_usb_table[77], NULL },
+=======
+		{
+		  .name = "USB DVB-T DEVICE (Afatech)",
+		  .cold_ids = { NULL, NULL },
+		  .warm_ids = { &rtl2832u_usb_table[78], NULL },
+>>>>>>> 08696eea2bb680b4be13b2a76e695081d9930717
 		},
 		
 	}
@@ -1668,7 +1698,7 @@ static struct dvb_usb_device_properties rtl2832u_8th_properties = {
 		.rc_interval  = RT_RC_POLLING_INTERVAL_TIME_MS,		
 	},
 	
-	.num_device_descs = 9,
+	.num_device_descs = 10,
 	.devices = {
 		{ .name = "USB DVB-T Device",
 		  .cold_ids = { NULL, NULL },
@@ -1708,6 +1738,11 @@ static struct dvb_usb_device_properties rtl2832u_8th_properties = {
 		  .name ="VideoMate DTV",
 		  .cold_ids = { NULL, NULL },
 		  .warm_ids = { &rtl2832u_usb_table[71], NULL },
+		},
+		{
+		  .name ="WinFast DTV Dongle Mini",
+		  .cold_ids = { NULL, NULL },
+		  .warm_ids = { &rtl2832u_usb_table[77], NULL },
 		},
 
 		{ NULL },				
